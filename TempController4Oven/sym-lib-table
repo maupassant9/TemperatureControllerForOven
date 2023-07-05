@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "lib_converter")(type "KiCad")(uri "D:/xiado/Project/someProject/kicadlib/KicadLib/lib_converter.kicad_sym")(options "")(descr ""))
+  (lib (name "ESP8266")(type "Legacy")(uri "C:/Users/xiado/OneDrive/Área de Trabalho/kicad-ESP8266-master/ESP8266.lib")(options "")(descr ""))
+)

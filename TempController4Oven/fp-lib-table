@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "KicadPcb")(type "KiCad")(uri "D:/xiado/Project/someProject/kicadlib/KicadLib/KicadPcb.pretty")(options "")(descr ""))
+  (lib (name "ESP8266")(type "KiCad")(uri "C:/Users/xiado/OneDrive/Área de Trabalho/kicad-ESP8266-master/ESP8266.pretty")(options "")(descr ""))
+)
