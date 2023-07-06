@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "lib_converter")(type "KiCad")(uri "/home/dary/Documents/PersonalProjects/KicadLib/DongXia_Lib.kicad_sym")(options "")(descr ""))
+)

@@ -1,0 +1,190 @@
+44946268363479
+KicadPcb
+2.4GHz-INVERTED-F-ANTENNA
+
+
+0
+15
+2
+KicadPcb
+ESP-01
+Module, ESP-8266, ESP-01, 8 pin
+Module ESP-8266 ESP8266
+0
+8
+8
+KicadPcb
+ESP-03
+Module, ESP-8266, ESP-03, 14 pad, SMD
+Module ESP-8266 ESP8266
+0
+14
+14
+KicadPcb
+ESP-06
+
+
+0
+20
+20
+KicadPcb
+ESP-07S
+Module, ESP-8266, ESP-07S, 14 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+KicadPcb
+ESP-07v2
+Module, ESP-8266, ESP-07v2, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+KicadPcb
+ESP-12
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+KicadPcb
+ESP-12E
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+22
+22
+KicadPcb
+ESP-12E_SMD
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+22
+22
+KicadPcb
+ESP-13-WROOM-02
+Module, ESP-8266, ESP-13-WROOM-02, 18 pad, SMD
+Module ESP-8266 ESP8266
+0
+19
+19
+KicadPcb
+ESP-201
+Module, ESP-8266, ESP-201, 26 pin, through hole, 0.1 inch
+Module ESP-8266 ESP8266
+0
+26
+26
+KicadPcb
+ESP12F-Devkit-V3
+
+
+0
+30
+30
+KicadPcb
+ESP32_mod_smd
+
+
+0
+35
+35
+KicadPcb
+ESPRESSIF_ESP32_MIFA_2.4GHz_Right
+https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+PCB antenna
+0
+2
+2
+KicadPcb
+ESP_MOD_TH
+
+
+0
+35
+35
+KicadPcb
+LED_19-337_R6GHBHC-A01_2T
+
+
+0
+6
+6
+KicadPcb
+MEMS_S08OB381-026
+
+
+0
+6
+6
+KicadPcb
+MEMS_S15OT421
+
+
+0
+4
+4
+KicadPcb
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
+KicadPcb
+NodeMCU-LoLinV3
+
+
+0
+30
+30
+KicadPcb
+NodeMCU1.0(12-E)
+
+
+0
+30
+30
+KicadPcb
+QFN-88_EP_10x10_Pitch0.4mm
+
+
+0
+89
+89
+KicadPcb
+RotatingButtons_9
+
+
+0
+10
+9
+KicadPcb
+SMTU2032GTR
+SMTU2032-G.TR-1
+Battery
+0
+2
+2
+KicadPcb
+SW_1TS001G-2700-1500-CT
+
+
+0
+4
+4
+KicadPcb
+USB_A__SHOUHAN_10.0_QHHTZB6.3
+USB type A, Horizontal, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=292303&DocType=Customer+Drawing&DocLang=English
+USB_A Female Connector receptacle
+0
+6
+6
+KicadPcb
+connector_1x14_with_castellated_hole
+
+
+0
+0
+0
