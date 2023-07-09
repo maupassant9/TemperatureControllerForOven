@@ -2,10 +2,13 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <LiquidCrystal.h>
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
+
 
 //#define DEBUG (1)
-
 #define ESP8266
+#define USEWIFI
 #define TEMP_HIGH_LIM 40.0f
 #define TEMP_LOW_LIM 38.0f
 #define FILTER_SZ 50
@@ -23,11 +26,27 @@ const int rs = 10, en = 9, d4 = 8, d5 = 7, d6 = 6, d7 = 5;
 const int rs = 0, en = 2, d4 = 12, d5 = 14, d6 = 15, d7 = 13;
 #endif
 
+
+#ifndef USEWIFI
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+#else
+int port = 8888;
+WiFiUDP udp;
+char incomingPacket[256];
+const char *ssid = "DongXia_AP";
+const char *password = "mywififoralexa";
+const char *ipaddr = "192.168.4.2";
+char tempHead[] = "temp:";
+char rlyHead[] = "rly:";
+char maxMinHead[] = "maxmin:";
+char rlyCntHead[] = "rcnt:";
+bool relayState;
+#endif
 
 OneWire onewire(ONE_WIRE_BUS);
 DallasTemperature tempSensor(&onewire);
 
+//filter buffer
 static float buffer[FILTER_SZ];
 
 
@@ -36,17 +55,24 @@ void setup() {
   #ifdef DEBUG
     Serial.begin(9600);
   #endif
+
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(RELAY_PIN, OUTPUT);
-  
+  relayState = false;
   tempSensor.begin();
   
+  #ifdef USEWIFI
+  WiFi.softAP(ssid, password);
+  udp.begin(port);
+  sndUdpPacket(rlyHead, 0);
+  #else
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   lcd.setCursor(0,0);
   lcd.print("T:         N:");
   lcd.setCursor(0,1);
   lcd.print("RLY:OFF[  -  ]*C"); 
+  #endif
   
   for(int i = 0; i < FILTER_SZ; i++) buffer[i] = 0.0f;  
 }
@@ -77,15 +103,30 @@ void loop() {
   if(isNotReady && (idx == FILTER_SZ -1)) isNotReady = 0;
   // Print a message to the LCD.
   if(isNotReady) return;
-  DisplayTemp(temp);
+  #ifndef USEWIFI
+    DisplayTemp(temp);
+  #else
+    //send the temperature via udp
+    sndUdpPacket(tempHead, (int) temp);
+  #endif
   maxTemp = (maxTemp<temp)?temp:maxTemp;
   minTemp = (minTemp>temp)?temp:minTemp;
+  #ifndef USEWIFI
   DisplayMaxMinTemp(maxTemp,minTemp);
+  #else
+  int maxmin = (int(maxTemp+0.5) << 8) + (int(minTemp+0.5));
+  sndUdpPacket(maxMinHead, maxmin);
+  #endif
   ReactWithTemp(temp, &rlyCnter);
-  DisplayRelayCounter(rlyCnter);  
+  #ifndef USEWIFI
+  DisplayRelayCounter(rlyCnter);
+  #else
+  sndUdpPacket(rlyCntHead, rlyCnter);
+  sndUdpPacket(rlyHead, relayState?1:0);
+  #endif
 }
 
-
+#ifndef USEWIFI
 void DisplayTemp(float temp)
 {
   lcd.setCursor(2,0);
@@ -111,6 +152,7 @@ void DisplayRelayCounter(int no)
   lcd.setCursor(13,0);
   lcd.print(no);
 }
+#endif
 
 uint8_t ReactWithTemp(float temp, int * pcnter)
 {
@@ -139,8 +181,14 @@ void RelayOn()
 #ifdef DEBUG
   Serial.println("RELAY ON");
 #endif
+
+#ifndef USEWIFI
   lcd.setCursor(4,1);
   lcd.print("ON ");
+#else
+  //sndUdpPacket(rlyHead, 1);
+  relayState = true;
+#endif
 }
 
 void RelayOff()
@@ -151,7 +199,25 @@ void RelayOff()
   digitalWrite(RELAY_PIN, LOW);
 #ifdef DEBUG
   Serial.println("RELAY OFF");
-#endif  
+#endif
+
+#ifndef USEWIFI
   lcd.setCursor(4,1);
   lcd.print("OFF");
+#else
+  //sndUdpPacket(rlyHead, 0);
+  relayState = false;
+#endif
 }
+
+#ifdef USEWIFI
+void sndUdpPacket(char * preStr, int val)
+{ 
+    String str = String(val);
+    udp.beginPacket(ipaddr, port);
+    udp.write(preStr);
+    udp.write(str.c_str());
+    udp.write(";");
+    udp.endPacket();
+}
+#endif
