@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_2.prj" location="D:\xiado\Project\someProject\TemperatureControllerForOven\Software" name="TempDisplay_2" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="2069642947" file="D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay.prj" location="D:\xiado\Project\someProject\TemperatureControllerForOven\Software" name="TempDisplay" preferred-package-location="D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TempDisplay</param.appname>
     <param.icon />
     <param.icons />
@@ -16,16 +16,16 @@
     <param.logo />
     <param.install.notes />
     <param.target.install.notes />
-    <param.intermediate>${PROJECT_ROOT}\TempDisplay_3\for_testing</param.intermediate>
-    <param.files.only>${PROJECT_ROOT}\TempDisplay_3\for_redistribution_files_only</param.files.only>
-    <param.output>${PROJECT_ROOT}\TempDisplay_3\for_redistribution</param.output>
-    <param.logdir>${PROJECT_ROOT}\TempDisplay_3</param.logdir>
+    <param.intermediate>${PROJECT_ROOT}\TempDisplay_2\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\TempDisplay_2\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\TempDisplay_2\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\TempDisplay_2</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.standalone</param.target.type>
     <param.support.packages />
-    <param.web.mcr>true</param.web.mcr>
-    <param.package.mcr>false</param.package.mcr>
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
     <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
@@ -58,8 +58,6 @@
       <param.user.defined.mcr.options />
       <param.target.type />
       <param.support.packages />
-      <param.web.mcr />
-      <param.package.mcr />
       <param.no.mcr />
       <param.web.mcr.name />
       <param.package.mcr.name />
@@ -77,12 +75,13 @@
     <fileset.resources />
     <fileset.package />
     <fileset.depfun>
+      <file>C:\Users\xiado\Documents\MATLAB\Examples\R2021b\matlab\AppdMemoryMonitorExample\log.txt</file>
       <file>${PROJECT_ROOT}\RsvDataFromController.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\TempDisplay_3\for_testing" name="readme.txt" optional="true">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_3\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\TempDisplay_3\for_testing" name="TempDisplay.exe" optional="false">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_3\for_testing\TempDisplay.exe</file>
-      <file location="${PROJECT_ROOT}\TempDisplay_3\for_testing" name="splash.png" optional="false">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_3\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\TempDisplay_2\for_testing" name="TempDisplay.exe" optional="false">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_2\for_testing\TempDisplay.exe</file>
+      <file location="${PROJECT_ROOT}\TempDisplay_2\for_testing" name="splash.png" optional="false">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_2\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\TempDisplay_2\for_testing" name="readme.txt" optional="true">D:\xiado\Project\someProject\TemperatureControllerForOven\Software\TempDisplay_2\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
