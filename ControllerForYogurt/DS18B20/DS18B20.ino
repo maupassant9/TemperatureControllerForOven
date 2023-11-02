@@ -4,7 +4,12 @@
 #include <LiquidCrystal.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
+#include <UniversalTelegramBot.h>
 
+// Telegram BOT Token (Get from Botfather)
+#define BOT_TOKEN "6350342467:AAHvajFe7Kb4tdaFS3RO7ULHnJcwneXNqvM"
+WiFiClientSecure secured_client;
+UniversalTelegramBot bot(BOT_TOKEN, secured_client);
 
 //#define DEBUG (1)
 #define ESP8266
