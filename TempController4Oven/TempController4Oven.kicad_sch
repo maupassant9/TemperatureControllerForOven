@@ -4726,6 +4726,16 @@
 		)
 		(uuid "fd93abf1-6272-4552-8e25-143a09369003")
 	)
+	(label "LCD_D0"
+		(at 96.52 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "11b2d11e-60bb-4b4a-8e77-7a7d9de0c70b")
+	)
 	(label "GP_RELAY"
 		(at 40.64 52.07 0)
 		(effects
@@ -4755,6 +4765,16 @@
 			(justify left bottom)
 		)
 		(uuid "3501d44e-5f44-4c8b-8fdd-a54f58bf1127")
+	)
+	(label "LCD_EN"
+		(at 40.64 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39fe134d-dc88-4583-b3fd-ff556bfeec37")
 	)
 	(label "LCD_D3"
 		(at 203.2 69.85 0)
@@ -4786,6 +4806,16 @@
 		)
 		(uuid "557462f6-be9a-45f2-8bc1-9501d1a66412")
 	)
+	(label "LCD_D1"
+		(at 96.52 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5ebeaf38-b344-48d2-af16-7afdd14d7592")
+	)
 	(label "SEN_TEMP"
 		(at 40.64 54.61 0)
 		(effects
@@ -4795,16 +4825,6 @@
 			(justify left bottom)
 		)
 		(uuid "63755fc2-b483-48ca-8f10-bdcfca56bb80")
-	)
-	(label "LCD_D0"
-		(at 96.52 46.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "80b76952-4540-4d80-ac11-198810c33334")
 	)
 	(label "LCD_D0"
 		(at 203.2 62.23 0)
@@ -4826,16 +4846,6 @@
 		)
 		(uuid "834335b1-ef6b-4fae-866a-fbd50792554d")
 	)
-	(label "LCD_RS"
-		(at 40.64 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "85007736-711c-4d05-a39c-b3f2e5e5b7e8")
-	)
 	(label "LCD_D2"
 		(at 203.2 67.31 0)
 		(effects
@@ -4845,16 +4855,6 @@
 			(justify left bottom)
 		)
 		(uuid "982df952-665e-46e2-9146-739976f4dc6c")
-	)
-	(label "LCD_D1"
-		(at 96.52 49.53 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a2a7e55f-17e4-45df-9ad0-840d4431e6e2")
 	)
 	(label "SEN_TEMP"
 		(at 87.63 173.99 0)
@@ -4886,7 +4886,7 @@
 		)
 		(uuid "bc997662-c3c8-4db5-8547-0336e3f218b1")
 	)
-	(label "LCD_EN"
+	(label "LCD_RS"
 		(at 40.64 57.15 0)
 		(effects
 			(font
@@ -4894,7 +4894,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec3ad2e6-198a-42ef-8bb4-3e291a8fc6ba")
+		(uuid "d0549d68-571b-48b6-8c42-97b7f30fdfba")
 	)
 	(symbol
 		(lib_id "power:+5VD")

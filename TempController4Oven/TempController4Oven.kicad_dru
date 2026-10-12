@@ -1,0 +1,13 @@
+(version 1)
+(rule "Minimum clearance 1"
+	(constraint clearance (min 0.1778mm))
+)
+(rule "Via style 1"
+	(constraint via_diameter (min 0.6mm) (max 1mm))
+	(constraint hole_size (min 0.3mm) (max 0.6mm))
+	(condition "A.Via_Type == 'Through'")
+)
+(rule "Silk to silk clearance 1"
+	(constraint silk_clearance (min 0.01mm))
+	(condition "L == 'F.SilkS' || L == 'B.SilkS'")
+)
