@@ -1,0 +1,41 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.Source Files\drivers.drivers\74hc595.c.Config.0]
+ExternDep= drivers\74hc595.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  drivers\74hc595.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\stm8s_stdperiph_driver\inc\stm8s.h  drivers\stm8s_stdperiph_driver\inc\stm8s_gpio.h
+
+[Root.Source Files.Source Files\drivers.drivers\alarm.c.Config.0]
+ExternDep= drivers\alarm.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\alarm.h drivers\time.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"
+
+[Root.Source Files.Source Files\drivers.drivers\button.c.Config.0]
+ExternDep= drivers\button.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  drivers\button.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\circular_buf_f.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"
+
+[Root.Source Files.Source Files\drivers.drivers\circular_buf_f.c.Config.0]
+ExternDep= drivers\circular_buf_f.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"  drivers\circular_buf_f.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"
+
+[Root.Source Files.Source Files\drivers.drivers\countdown.c.Config.0]
+ExternDep= drivers\countdown.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"  drivers\countdown.h drivers\time.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"
+
+[Root.Source Files.Source Files\drivers.drivers\sevenseg.c.Config.0]
+ExternDep= drivers\sevenseg.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\stm8s_stdperiph_driver\inc\stm8s.h drivers\sevenSeg.h  drivers\74hc595.h drivers\stm8s_stdperiph_driver\inc\stm8s_gpio.h
+
+[Root.Source Files.Source Files\drivers.drivers\time.c.Config.0]
+ExternDep= drivers\time.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"  drivers\time.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"
+
+[Root.Source Files.Source Files\drivers.drivers\tl_pico.c.Config.0]
+ExternDep= drivers\tl_pico.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  drivers\tl_pico.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"
+
+[Root.Source Files.main.c.Config.0]
+ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\stm8s_stdperiph_driver\inc\stm8s.h sm.h
+
+[Root.Source Files.menu.c.Config.0]
+ExternDep= menu.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\string.h"  drivers\sevenSeg.h drivers\74hc595.h  drivers\stm8s_stdperiph_driver\inc\stm8s.h  drivers\stm8s_stdperiph_driver\inc\stm8s_gpio.h menu.h drivers\button.h  drivers\circular_buf_f.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h" board.h  drivers\alarm.h drivers\time.h drivers\countdown.h drivers\tl_pico.h
+
+[Root.Source Files.sm.c.Config.0]
+ExternDep= sm.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  drivers\stm8s_stdperiph_driver\inc\stm8s.h board.h drivers\alarm.h  drivers\time.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  drivers\countdown.h drivers\sevenSeg.h drivers\74hc595.h  drivers\stm8s_stdperiph_driver\inc\stm8s_gpio.h drivers\button.h  drivers\circular_buf_f.h drivers\tl_pico.h menu.h sm.h  drivers\stm8s_stdperiph_driver\inc\stm8s_tim4.h
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl.h"

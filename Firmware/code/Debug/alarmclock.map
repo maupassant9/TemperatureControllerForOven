@@ -1,0 +1,973 @@
+
+Map of Debug\alarmclock.sm8 from link file Debug\alarmclock.lkf - Sun Nov  1 12:54:02 2026
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00008080 end 000080d5 length    85 segment .const
+start 00008110 end 00009e51 length  7489 segment .text
+start 00004000 end 00004000 length     0 segment .eeprom
+start 00000000 end 00000000 length     0 segment .bsct
+start 00000000 end 000000ae length   174 segment .ubsct
+start 000000ae end 000000ae length     0 segment .bit
+start 000000ae end 000000ae length     0 segment .share
+start 00000100 end 00000133 length    51 segment .data, initialized
+start 000080dd end 00008110 length    51 segment .data, from
+start 00000133 end 00000157 length    36 segment .bss
+start 00000000 end 00000bb6 length  2998 segment .info.
+start 00000000 end 00005337 length 21303 segment .debug
+start 00008000 end 00008080 length   128 segment .const
+start 000080d5 end 000080dd length     8 segment .init
+
+
+                               -------
+                               Modules
+                               -------
+
+C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8:
+start 00008110 end 00008161 length    81 section .text
+start 00000133 end 00000133 length     0 section .bss
+start 00000000 end 00000000 length     0 section .ubsct
+start 00000000 end 00000032 length    50 section .info.
+
+Debug\74hc595.o:
+start 00008161 end 0000830d length   428 section .text
+start 00000100 end 0000010f length    15 section .data
+start 00000000 end 000006f7 length  1783 section .debug
+start 00000032 end 000000be length   140 section .info.
+
+Debug\alarm.o:
+start 0000830d end 00008489 length   380 section .text
+start 000006f7 end 00000d28 length  1585 section .debug
+start 000000be end 00000148 length   138 section .info.
+start 00008080 end 00008086 length     6 section .const
+
+Debug\button.o:
+start 00008489 end 00008572 length   233 section .text
+start 00000d28 end 000010ec length   964 section .debug
+start 00000148 end 000001d3 length   139 section .info.
+start 00008086 end 00008099 length    19 section .const
+
+Debug\circular_buf_f.o:
+start 00008572 end 000086a5 length   307 section .text
+start 000010ec end 000013f2 length   774 section .debug
+start 000001d3 end 00000266 length   147 section .info.
+
+Debug\countdown.o:
+start 000086a5 end 000087ef length   330 section .text
+start 000013f2 end 000018c4 length  1234 section .debug
+start 00000266 end 000002f4 length   142 section .info.
+
+Debug\sevenseg.o:
+start 000087ef end 0000893a length   331 section .text
+start 0000010f end 00000118 length     9 section .data
+start 000018c4 end 000021ae length  2282 section .debug
+start 000002f4 end 00000381 length   141 section .info.
+start 00008099 end 000080b5 length    28 section .const
+
+Debug\time.o:
+start 0000893a end 00008ba8 length   622 section .text
+start 00000118 end 00000124 length    12 section .data
+start 000021ae end 000028ce length  1824 section .debug
+start 00000381 end 0000040a length   137 section .info.
+start 000080b5 end 000080bd length     8 section .const
+
+Debug\tl_pico.o:
+start 00008ba8 end 00008e5d length   693 section .text
+start 000028ce end 00003288 length  2490 section .debug
+start 0000040a end 00000496 length   140 section .info.
+
+Debug\main.o:
+start 00008e5d end 00008e68 length    11 section .text
+start 00000124 end 00000125 length     1 section .data
+start 00003288 end 00003407 length   383 section .debug
+start 00000496 end 0000051f length   137 section .info.
+
+Debug\menu.o:
+start 00008e68 end 00009641 length  2009 section .text
+start 00000125 end 0000012d length     8 section .data
+start 00000133 end 00000157 length    36 section .bss
+start 00003407 end 00004069 length  3170 section .debug
+start 0000051f end 000005a8 length   137 section .info.
+start 000080bd end 000080c3 length     6 section .const
+
+Debug\sm.o:
+start 00009641 end 00009b2b length  1258 section .text
+start 0000012d end 00000133 length     6 section .data
+start 00000000 end 000000a4 length   164 section .ubsct
+start 00004069 end 000051cc length  4451 section .debug
+start 000005a8 end 0000062f length   135 section .info.
+start 000080c3 end 000080d5 length    18 section .const
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libisl.sm8)memcpy1.o:
+start 00009b2b end 00009b4b length    32 section .text
+start 0000062f end 0000065d length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libisl.sm8)memset1.o:
+start 00009b4b end 00009b5a length    15 section .text
+start 0000065d end 0000068b length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lreg.o:
+start 000000a4 end 000000a8 length     4 section .ubsct
+start 0000068b end 000006b9 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)xreg.o:
+start 000000a8 end 000000ab length     3 section .ubsct
+start 000006b9 end 000006e7 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)yreg.o:
+start 000000ab end 000000ae length     3 section .ubsct
+start 000006e7 end 00000715 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)bmulx.o:
+start 00009b5a end 00009b68 length    14 section .text
+start 00000715 end 00000744 length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)idiv.o:
+start 00009b68 end 00009b86 length    30 section .text
+start 00000744 end 00000772 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)imul.o:
+start 00009b86 end 00009baa length    36 section .text
+start 00000772 end 000007a0 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)itolx.o:
+start 00009baa end 00009bb8 length    14 section .text
+start 000007a0 end 000007cf length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)jtab.o:
+start 00009bb8 end 00009be5 length    45 section .text
+start 000007cf end 000007fd length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladc.o:
+start 00009be5 end 00009bf6 length    17 section .text
+start 000007fd end 0000082b length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladd.o:
+start 00009bf6 end 00009c0e length    24 section .text
+start 0000082b end 00000859 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lcmp.o:
+start 00009c0e end 00009c2e length    32 section .text
+start 00000859 end 00000887 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lgadc.o:
+start 00009c2e end 00009c3e length    16 section .text
+start 00000887 end 000008b6 length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lrzmp.o:
+start 00009c3e end 00009c52 length    20 section .text
+start 000008b6 end 000008e5 length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lsub.o:
+start 00009c52 end 00009c6a length    24 section .text
+start 000008e5 end 00000913 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ltor.o:
+start 00009c6a end 00009c7c length    18 section .text
+start 00000913 end 00000941 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ludiv.o:
+start 00009c7c end 00009c91 length    21 section .text
+start 00000941 end 00000970 length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o:
+start 00009c91 end 00009d7e length   237 section .text
+start 00000970 end 0000099e length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lgneg.o:
+start 00009d7e end 00009d91 length    19 section .text
+start 0000099e end 000009cd length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lneg.o:
+start 00009d91 end 00009da6 length    21 section .text
+start 000009cd end 000009fb length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lumod.o:
+start 00009da6 end 00009dc1 length    27 section .text
+start 000009fb end 00000a2a length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lzmp.o:
+start 00009dc1 end 00009dd4 length    19 section .text
+start 00000a2a end 00000a58 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)rtol.o:
+start 00009dd4 end 00009de6 length    18 section .text
+start 00000a58 end 00000a86 length    46 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)sdivx.o:
+start 00009de6 end 00009e11 length    43 section .text
+start 00000a86 end 00000ab5 length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)xymov.o:
+start 00009e11 end 00009e50 length    63 section .text
+start 00000ab5 end 00000ae4 length    47 section .info.
+
+Debug\stm8_interrupt_vector.o:
+start 00009e50 end 00009e51 length     1 section .text
+start 000051cc end 00005337 length   363 section .debug
+start 00000ae4 end 00000b7e length   154 section .info.
+start 00008000 end 00008080 length   128 section .const
+
+
+                             -----------
+                             Stack usage
+                             -----------
+
+Debug\74hc595.o:
+L11f_digitalPut                                 5   (5)
+L31f_gpioPinsInit                               4   (4)
+L3f_Hc595GpioWrite                             10   (5)
+L5f_Hc595GpiosWriteAll                         17   (7)
+L7f_Hc595Wait                              >    3   (3)
+f_DrvHc595Clear                                35   (7)
+f_DrvHc595Init                                 41   (6)
+f_DrvHc595Write                                28   (11)
+
+Debug\alarm.o:
+L3f_alarm_get_last_alarm_interval              31   (11)
+f_alarm_attach_off_func                         8   (8)
+f_alarm_attach_on_func                          8   (8)
+f_alarm_check                                  79   (7) *** Recursive *** *** pointer() ***
+f_alarm_init                                   21   (12)
+f_alarm_update_alarm_datetime                  45   (14)
+
+Debug\button.o:
+f_bt_init                                      10   (10)
+f_bt_update                                    86   (14) *** Recursive *** *** pointer() ***
+
+Debug\circular_buf_f.o:
+f_cirbuf_get                                   18   (9)
+f_cirbuf_init                                  12   (12)
+f_cirbuf_put                                   18   (9)
+
+Debug\countdown.o:
+f_rc_attach_off_func                            8   (8)
+f_rc_attach_on_func                             8   (8)
+f_rc_check                                     77   (5) *** Recursive *** *** pointer() ***
+f_rc_get_left_time                             31   (7)
+f_rc_init                                      17   (17)
+
+Debug\main.o:
+f_main                                     >   80   (3)
+
+Debug\menu.o:
+f_menu_alarm_next                              55   (12)
+f_menu_alarm_next_aux_cfg_date                 43   (15)
+f_menu_alarm_next_aux_cfg_repeate_pattern      27   (15)
+f_menu_digital_input_inc                        5   (5)
+f_menu_digital_input_init                      11   (11)
+f_menu_init                                     3   (3)
+f_menu_regressive_next                         53   (10)
+f_menu_select_sm_next                          61   (6)
+f_menu_show                                    68   (7)
+f_menu_show_alarm_item                         28   (7)
+f_menu_show_digital_input                      21   (3)
+f_menu_show_repeate_item                       12   (5)
+
+Debug\sevenseg.o:
+L3f_Drv7SegCtrInit                              3   (3)
+L5f_Drv7SegCtrClearAll                          3   (3)
+f_Drv7SegClear                                  6   (6)
+f_Drv7SegClearAll                              12   (6)
+f_Drv7SegCtrSet                                 8   (8)
+f_Drv7SegGetDisplayCode                         3   (3)
+f_Drv7SegInit                                  44   (3)
+f_Drv7SegSetDigit                               7   (7)
+f_Drv7SegSetDp                             >    6   (6)
+f_Drv7SegSetNum                                18   (11)
+f_Drv7SegSetRawCode                        >    7   (7)
+f_Drv7SegShow                                  34   (6)
+
+Debug\sm.o:
+L11f_led_off                                    3   (3)
+L12f_count_bits                                 5   (5)
+L13f_sm_config                                 74   (6)
+L14f_tim4Init                                   3   (3)
+L31f_get_but                                    4   (4)
+L32f_seven_seg_show                            23   (5)
+L33f_sm_waiting                                74   (6)
+L51f_but_check                                 57   (3) *** Recursive ***
+L52f_check_up                                  72   (3) *** Recursive ***
+L53f_sm_working                                37   (6)
+L71f_sev_seg_update                            40   (6)
+L72f_sm_init                                   74   (6)
+L73f_sm_idle                                   24   (6)
+L7f_led_on                                      3   (3)
+f_TimerHandler1                            >   96   (16) *** Recursive ***
+f_main_sm                                      77   (3)
+
+Debug\stm8_interrupt_vector.o:
+f_NonHandledInterrupt                      >    6   (6)
+
+Debug\time.o:
+f_t_convert_sec_to_time                        24   (9)
+f_t_date_add                                   18   (8)
+f_t_date_compare                                7   (7)
+f_t_date_inc                                   16   (6)
+f_t_datetime_compare                           15   (8)
+f_t_datetime_inc                               21   (5)
+f_t_get_day_of_week                            20   (16)
+f_t_last_day_of_month                          10   (7)
+f_t_time_compare                                7   (7)
+f_t_time_dec                               >    6   (6)
+f_t_time_inc                                    5   (5)
+
+Debug\tl_pico.o:
+L3f_tl_get_taskmem                              8   (8)
+L5f_tl_find                                    11   (11)
+f_tl_add                                       29   (21)
+f_tl_add_singleton                             50   (21)
+f_tl_get_timestamp                         >    6   (3)
+f_tl_init                                      18   (10)
+f_tl_pause                                      7   (7)
+f_tl_pause_all                             >    5   (5)
+f_tl_remove                                >    7   (7)
+f_tl_resume                                     7   (7)
+f_tl_resume_all                            >    5   (5)
+f_tl_update                                    80   (8) *** Recursive *** *** pointer() ***
+
+C:\Program Files (x86:
+f_memcpy                                        9   (9)
+f_memset                                        8   (8)
+d_bmulx                                         5   (5)
+d_idiv                                          4   (4)
+d_imul                                          3   (3)
+d_itolx                                         3   (3)
+d_ladc                                          3   (3)
+d_ladd                                          3   (3)
+d_lcmp                                          3   (3)
+d_lgadc                                         3   (3)
+d_lgneg                                    >    3   (3)
+d_lneg                                     >    3   (3)
+d_lrzmp                                         3   (3)
+d_lsub                                          3   (3)
+d_ltor                                          3   (3)
+d_ludv                                         15   (15)
+d_lumd                                         15   (15)
+d_lzmp                                          3   (3)
+d_rtol                                          4   (4)
+d_sdivx                                         3   (3)
+d_smodx                                         3   (3)
+d_xymov                                         5   (5)
+
+Stack size: 176
+
+
+                              ---------
+                              Call tree
+                              ---------
+   1 > L7f_Hc595Wait: (3)
+
+   2 > f_Drv7SegSetDp: (6)
+
+   3 > f_Drv7SegSetRawCode: (7)
+
+   4 > f_NonHandledInterrupt: (6)
+
+   5 > f_TimerHandler1: (16)
+   6      + f_tl_update: (8)
+   7      |    + (L11f_led_off) ...
+   8      |    + (L31f_get_but) ...
+   9      |    + (L32f_seven_seg_show) ...
+  10      |    + (L51f_but_check) ...
+  11      |    + (L52f_check_up) ...
+  12      |    + (L71f_sev_seg_update) ...
+  13      |    + (L7f_led_on) ...
+          | 
+       
+  14 > f__stext: (0)
+
+  15 > f_main: (3)
+  16      + f_main_sm: (3)
+  17      |    + L13f_sm_config: (6)
+  18      |    |    + f_cirbuf_get: (9)
+  19      |    |    |    + f_memcpy: (9)
+          |    |    | 
+  20      |    |    + f_menu_show: (7)
+  21      |    |    |    + f_menu_alarm_next: (12)
+  22      |    |    |    |    + f_Drv7SegSetDigit: (7)
+  23      |    |    |    |    + f_memcpy --> 19
+  24      |    |    |    |    + f_menu_alarm_next_aux_cfg_date: (15)
+  25      |    |    |    |    |    + f_menu_digital_input_inc: (5)
+  26      |    |    |    |    |    + f_menu_digital_input_init: (11)
+  27      |    |    |    |    |    + f_menu_show_alarm_item: (7)
+  28      |    |    |    |    |    |    + f_Drv7SegSetDigit --> 22
+  29      |    |    |    |    |    |    + f_menu_show_digital_input: (3)
+  30      |    |    |    |    |    |    |    + f_Drv7SegSetNum: (11)
+  31      |    |    |    |    |    |    |    |    + f_Drv7SegSetDigit --> 22
+          |    |    |    |    |    |    |    | 
+          |    |    |    |    |    |    | 
+          |    |    |    |    |    | 
+          |    |    |    |    | 
+  32      |    |    |    |    + f_menu_alarm_next_aux_cfg_repeate_pattern: (15)
+  33      |    |    |    |    |    + f_menu_show_repeate_item: (5)
+  34      |    |    |    |    |    |    + f_Drv7SegSetDigit --> 22
+          |    |    |    |    |    | 
+          |    |    |    |    | 
+  35      |    |    |    |    + f_menu_digital_input_inc --> 25
+  36      |    |    |    |    + f_menu_digital_input_init --> 26
+  37      |    |    |    |    + f_menu_show_alarm_item --> 27
+  38      |    |    |    |    + f_menu_show_repeate_item --> 33
+  39      |    |    |    |    + f_t_last_day_of_month: (7)
+          |    |    |    | 
+  40      |    |    |    + f_menu_regressive_next: (10)
+  41      |    |    |    |    + f_Drv7SegSetDigit --> 22
+  42      |    |    |    |    + f_menu_alarm_next_aux_cfg_date --> 24
+  43      |    |    |    |    + f_menu_digital_input_inc --> 25
+  44      |    |    |    |    + f_menu_digital_input_init --> 26
+  45      |    |    |    |    + f_menu_show_alarm_item --> 27
+  46      |    |    |    |    + f_t_convert_sec_to_time: (9)
+          |    |    |    | 
+  47      |    |    |    + f_menu_select_sm_next: (6)
+  48      |    |    |    |    + f_Drv7SegSetDigit --> 22
+  49      |    |    |    |    + f_menu_alarm_next --> 21
+  50      |    |    |    |    + f_menu_regressive_next --> 40
+          |    |    |    | 
+          |    |    | 
+  51      |    |    + f_tl_pause: (7)
+          |    | 
+  52      |    + L33f_sm_waiting: (6)
+  53      |    |    + f_cirbuf_get --> 18
+  54      |    |    + f_menu_show --> 20
+  55      |    |    + f_rc_get_left_time: (7)
+  56      |    |    |    + f_memset: (8)
+  57      |    |    |    + f_t_convert_sec_to_time --> 46
+          |    |    | 
+  58      |    |    + f_tl_resume: (7)
+          |    | 
+  59      |    + L53f_sm_working: (6)
+  60      |    |    + f_cirbuf_get --> 18
+  61      |    |    + f_rc_get_left_time --> 55
+          |    | 
+  62      |    + L72f_sm_init: (6)
+  63      |    |    + L14f_tim4Init: (3)
+  64      |    |    + f_Drv7SegClear: (6)
+  65      |    |    + f_Drv7SegInit: (3)
+  66      |    |    |    + L3f_Drv7SegCtrInit: (3)
+  67      |    |    |    + f_DrvHc595Init: (6)
+  68      |    |    |    |    + L31f_gpioPinsInit: (4)
+  69      |    |    |    |    + L5f_Hc595GpiosWriteAll: (7)
+  70      |    |    |    |    |    + L3f_Hc595GpioWrite: (5)
+  71      |    |    |    |    |    |    + L11f_digitalPut: (5)
+          |    |    |    |    |    | 
+          |    |    |    |    | 
+  72      |    |    |    |    + f_DrvHc595Clear: (7)
+  73      |    |    |    |    |    + f_DrvHc595Write: (11)
+  74      |    |    |    |    |    |    + L5f_Hc595GpiosWriteAll --> 69
+          |    |    |    |    |    | 
+          |    |    |    |    | 
+          |    |    |    | 
+          |    |    | 
+  75      |    |    + f_alarm_attach_off_func: (8)
+  76      |    |    + f_alarm_attach_on_func: (8)
+  77      |    |    + f_alarm_init: (12)
+  78      |    |    |    + f_memcpy --> 19
+          |    |    | 
+  79      |    |    + f_bt_init: (10)
+  80      |    |    + f_cirbuf_init: (12)
+  81      |    |    + f_menu_init: (3)
+  82      |    |    + f_menu_show --> 20
+  83      |    |    + f_rc_attach_off_func: (8)
+  84      |    |    + f_rc_attach_on_func: (8)
+  85      |    |    + f_rc_init: (17)
+  86      |    |    + f_tl_add: (21)
+  87      |    |    |    + L3f_tl_get_taskmem: (8)
+          |    |    | 
+  88      |    |    + f_tl_add_singleton: (21)
+  89      |    |    |    + L5f_tl_find: (11)
+  90      |    |    |    + f_tl_add --> 86
+          |    |    | 
+  91      |    |    + f_tl_init: (10)
+  92      |    |    |    + f_memset --> 56
+          |    |    | 
+          |    | 
+  93      |    + L73f_sm_idle: (6)
+  94      |    |    + f_cirbuf_get --> 18
+          |    | 
+          | 
+       
+  95 > f_t_time_dec: (6)
+
+  96 > f_tl_get_timestamp: (3)
+
+  97 > f_tl_pause_all: (5)
+
+  98 > f_tl_remove: (7)
+
+  99 > f_tl_resume_all: (5)
+
+ 100   L11f_digitalPut --> 71
+
+ 101   L11f_led_off: (3)
+
+ 102   L12f_count_bits: (5)
+
+ 103   L13f_sm_config --> 17
+
+ 104   L14f_tim4Init --> 63
+
+ 105   L31f_get_but: (4)
+
+ 106   L31f_gpioPinsInit --> 68
+
+ 107   L32f_seven_seg_show: (5)
+ 108      + f_Drv7SegClearAll: (6)
+ 109      |    + f_Drv7SegClear --> 64
+          | 
+ 110      + f_Drv7SegSetDigit --> 22
+ 111      + f_Drv7SegSetNum --> 30
+       
+ 112   L33f_sm_waiting --> 52
+
+ 113   L3f_Drv7SegCtrInit --> 66
+
+ 114   L3f_Hc595GpioWrite --> 70
+
+ 115   L3f_alarm_get_last_alarm_interval: (11)
+ 116      + f_t_get_day_of_week: (16)
+       
+ 117   L3f_tl_get_taskmem --> 87
+
+ 118   L51f_but_check: (3)
+ 119      + f_bt_update: (14)
+ 120      |    + (L11f_led_off) --> 101
+ 121      |    + (L31f_get_but) --> 105
+ 122      |    + (L32f_seven_seg_show) --> 107
+ 123      |    + (L51f_but_check) --> 118
+ 124      |    + (L52f_check_up) ...
+ 125      |    + (L71f_sev_seg_update) ...
+ 126      |    + (L7f_led_on) ...
+ 127      |    + f_cirbuf_put: (9)
+ 128      |    |    + f_memcpy --> 19
+          |    | 
+          | 
+       
+ 129   L52f_check_up: (3)
+ 130      + f_alarm_check: (7)
+ 131      |    + (L11f_led_off) --> 101
+ 132      |    + (L31f_get_but) --> 105
+ 133      |    + (L32f_seven_seg_show) --> 107
+ 134      |    + (L51f_but_check) --> 118
+ 135      |    + (L52f_check_up) --> 129
+ 136      |    + (L71f_sev_seg_update) ...
+ 137      |    + (L7f_led_on) ...
+ 138      |    + f_alarm_update_alarm_datetime: (14)
+ 139      |    |    + L3f_alarm_get_last_alarm_interval --> 115
+ 140      |    |    + f_memcpy --> 19
+ 141      |    |    + f_t_date_add: (8)
+ 142      |    |    |    + f_t_last_day_of_month --> 39
+          |    |    | 
+          |    | 
+ 143      |    + f_t_datetime_compare: (8)
+ 144      |    |    + f_t_date_compare: (7)
+ 145      |    |    + f_t_time_compare: (7)
+          |    | 
+          | 
+ 146      + f_rc_check: (5)
+ 147      |    + (L11f_led_off) --> 101
+ 148      |    + (L31f_get_but) --> 105
+ 149      |    + (L32f_seven_seg_show) --> 107
+ 150      |    + (L51f_but_check) --> 118
+ 151      |    + (L52f_check_up) --> 129
+ 152      |    + (L71f_sev_seg_update) ...
+ 153      |    + (L7f_led_on) ...
+          | 
+ 154      + f_t_datetime_inc: (5)
+ 155      |    + f_t_date_inc: (6)
+ 156      |    |    + f_t_last_day_of_month --> 39
+          |    | 
+ 157      |    + f_t_time_inc: (5)
+          | 
+       
+ 158   L53f_sm_working --> 59
+
+ 159   L5f_Drv7SegCtrClearAll: (3)
+
+ 160   L5f_Hc595GpiosWriteAll --> 69
+
+ 161   L5f_tl_find --> 89
+
+ 162   L71f_sev_seg_update: (6)
+ 163      + L12f_count_bits --> 102
+ 164      + f_Drv7SegCtrSet: (8)
+ 165      + f_Drv7SegGetDisplayCode: (3)
+ 166      + f_Drv7SegShow: (6)
+ 167      |    + L5f_Drv7SegCtrClearAll --> 159
+ 168      |    + f_Drv7SegCtrSet --> 164
+ 169      |    + f_DrvHc595Write --> 73
+          | 
+       
+ 170   L72f_sm_init --> 62
+
+ 171   L73f_sm_idle --> 93
+
+ 172   L7f_led_on: (3)
+
+ 173   f_Drv7SegClear --> 64
+
+ 174   f_Drv7SegClearAll --> 108
+
+ 175   f_Drv7SegCtrSet --> 164
+
+ 176   f_Drv7SegGetDisplayCode --> 165
+
+ 177   f_Drv7SegInit --> 65
+
+ 178   f_Drv7SegSetDigit --> 22
+
+ 179   f_Drv7SegSetNum --> 30
+
+ 180   f_Drv7SegShow --> 166
+
+ 181   f_DrvHc595Clear --> 72
+
+ 182   f_DrvHc595Init --> 67
+
+ 183   f_DrvHc595Write --> 73
+
+ 184   f_alarm_attach_off_func --> 75
+
+ 185   f_alarm_attach_on_func --> 76
+
+ 186   f_alarm_check --> 130
+
+ 187   f_alarm_init --> 77
+
+ 188   f_alarm_update_alarm_datetime --> 138
+
+ 189   f_bt_init --> 79
+
+ 190   f_bt_update --> 119
+
+ 191   f_cirbuf_get --> 18
+
+ 192   f_cirbuf_init --> 80
+
+ 193   f_cirbuf_put --> 127
+
+ 194   f_main_sm --> 16
+
+ 195   f_memcpy --> 19
+
+ 196   f_memset --> 56
+
+ 197   f_menu_alarm_next --> 21
+
+ 198   f_menu_alarm_next_aux_cfg_date --> 24
+
+ 199   f_menu_alarm_next_aux_cfg_repeate_pattern --> 32
+
+ 200   f_menu_digital_input_inc --> 25
+
+ 201   f_menu_digital_input_init --> 26
+
+ 202   f_menu_init --> 81
+
+ 203   f_menu_regressive_next --> 40
+
+ 204   f_menu_select_sm_next --> 47
+
+ 205   f_menu_show --> 20
+
+ 206   f_menu_show_alarm_item --> 27
+
+ 207   f_menu_show_digital_input --> 29
+
+ 208   f_menu_show_repeate_item --> 33
+
+ 209   f_rc_attach_off_func --> 83
+
+ 210   f_rc_attach_on_func --> 84
+
+ 211   f_rc_check --> 146
+
+ 212   f_rc_get_left_time --> 55
+
+ 213   f_rc_init --> 85
+
+ 214   f_t_convert_sec_to_time --> 46
+
+ 215   f_t_date_add --> 141
+
+ 216   f_t_date_compare --> 144
+
+ 217   f_t_date_inc --> 155
+
+ 218   f_t_datetime_compare --> 143
+
+ 219   f_t_datetime_inc --> 154
+
+ 220   f_t_get_day_of_week --> 116
+
+ 221   f_t_last_day_of_month --> 39
+
+ 222   f_t_time_compare --> 145
+
+ 223   f_t_time_inc --> 157
+
+ 224   f_tl_add --> 86
+
+ 225   f_tl_add_singleton --> 88
+
+ 226   f_tl_init --> 91
+
+ 227   f_tl_pause --> 51
+
+ 228   f_tl_resume --> 58
+
+ 229   f_tl_update --> 6
+
+
+
+                               -------
+                               Symbols
+                               -------
+
+__endmem                                    000001ff   defined in command file
+                                                       *** not used ***
+__endzp                                     000000ae   defined in command file section .ubsct
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+__idesc__                                   000080d5   defined in linker section .init
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+__memory                                    00000157   defined in command file section .bss
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+__stack                                     000003ff   defined in command file
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+__startmem                                  00000157   defined in command file section .bss
+                                                       *** not used ***
+__vectab                                    00008000   defined in Debug\stm8_interrupt_vector.o section .const
+_cfg                                        00000000   defined in Debug\sm.o section .ubsct
+                                                       used in Debug\menu.o
+_codes_number                               00008099   defined in Debug\sevenseg.o section .const
+_gpioPin                                    0000010a   defined in Debug\74hc595.o section .data, initialized
+_gpioPort                                   00000100   defined in Debug\74hc595.o section .data, initialized
+_regNum                                     0000010f   defined in Debug\sevenseg.o section .data, initialized
+c_lreg                                      000000a4   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lreg.o section .ubsct
+                                                       used in Debug\countdown.o
+                                                               Debug\time.o
+                                                               Debug\sm.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)itolx.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladc.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladd.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lcmp.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lrzmp.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lsub.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ltor.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lneg.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lumod.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)rtol.o
+c_x                                         000000a8   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)xreg.o section .ubsct
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+                                                               Debug\alarm.o
+                                                               Debug\countdown.o
+                                                               Debug\sm.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libisl.sm8)memcpy1.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)bmulx.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)imul.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)jtab.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)sdivx.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)xymov.o
+c_y                                         000000ab   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)yreg.o section .ubsct
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+                                                               Debug\button.o
+                                                               Debug\tl_pico.o
+                                                               Debug\sm.o
+d_bmulx                                     00009b5a   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)bmulx.o section .text
+                                                       used in Debug\sevenseg.o
+                                                               Debug\menu.o
+d_divsl                                     00009c91   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o section .text
+                                                       *** not used ***
+d_divul                                     00009caa   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o section .text
+                                                       used in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ludiv.o
+                                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lumod.o
+d_idiv                                      00009b68   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)idiv.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\time.o
+d_imul                                      00009b86   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)imul.o section .text
+                                                       used in Debug\circular_buf_f.o
+                                                               Debug\menu.o
+d_itolx                                     00009baa   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)itolx.o section .text
+                                                       used in Debug\menu.o
+d_jctab                                     00009bb8   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)jtab.o section .text
+                                                       used in Debug\menu.o
+d_jstab                                     00009bba   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)jtab.o section .text
+                                                       *** not used ***
+d_ladc                                      00009be5   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladc.o section .text
+                                                       used in Debug\tl_pico.o
+d_ladd                                      00009bf6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ladd.o section .text
+                                                       used in Debug\tl_pico.o
+d_lcmp                                      00009c0e   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lcmp.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\button.o
+                                                               Debug\countdown.o
+                                                               Debug\tl_pico.o
+d_lgadc                                     00009c2e   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lgadc.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\button.o
+                                                               Debug\countdown.o
+                                                               Debug\tl_pico.o
+d_lgneg                                     00009d7e   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lgneg.o section .text
+                                                       used in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o
+d_lneg                                      00009d91   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lneg.o section .text
+                                                       used in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ldiv.o
+d_lrzmp                                     00009c3e   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lrzmp.o section .text
+                                                       used in Debug\button.o
+d_lsub                                      00009c52   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lsub.o section .text
+                                                       used in Debug\countdown.o
+d_ltor                                      00009c6a   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ltor.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\button.o
+                                                               Debug\countdown.o
+                                                               Debug\time.o
+                                                               Debug\tl_pico.o
+d_ludv                                      00009c7c   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)ludiv.o section .text
+                                                       used in Debug\time.o
+d_lumd                                      00009da6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lumod.o section .text
+                                                       used in Debug\button.o
+                                                               Debug\time.o
+d_lzmp                                      00009dc1   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)lzmp.o section .text
+                                                       used in Debug\countdown.o
+                                                               Debug\tl_pico.o
+d_rtol                                      00009dd4   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)rtol.o section .text
+                                                       used in Debug\tl_pico.o
+                                                               Debug\menu.o
+d_sdivx                                     00009dec   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)sdivx.o section .text
+                                                       used in Debug\time.o
+d_smodx                                     00009de6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)sdivx.o section .text
+                                                       used in Debug\time.o
+                                                               Debug\menu.o
+d_xymov                                     00009e11   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm.sm8)xymov.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\button.o
+                                                               Debug\sm.o
+f_Drv7SegClear                              000088a2   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_Drv7SegClearAll                           000088ac   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_Drv7SegCtrSet                             000088e1   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_Drv7SegGetDisplayCode                     0000889c   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_Drv7SegInit                               000087ef   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_Drv7SegSetDigit                           000087f7   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\menu.o
+                                                               Debug\sm.o
+f_Drv7SegSetDp                              00008813   defined in Debug\sevenseg.o section .text
+                                                       *** not used ***
+f_Drv7SegSetNum                             00008820   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\menu.o
+                                                               Debug\sm.o
+f_Drv7SegSetRawCode                         00008809   defined in Debug\sevenseg.o section .text
+                                                       *** not used ***
+f_Drv7SegShow                               0000887c   defined in Debug\sevenseg.o section .text
+                                                       used in Debug\sm.o
+f_DrvHc595Clear                             0000823d   defined in Debug\74hc595.o section .text
+f_DrvHc595Init                              00008161   defined in Debug\74hc595.o section .text
+                                                       used in Debug\sevenseg.o
+f_DrvHc595Write                             000081ee   defined in Debug\74hc595.o section .text
+                                                       used in Debug\sevenseg.o
+f_NonHandledInterrupt                       00009e50   defined in Debug\stm8_interrupt_vector.o section .text
+f_TimerHandler1                             00009656   defined in Debug\sm.o section .text
+                                                       used in Debug\stm8_interrupt_vector.o
+f__stext                                    00008110   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8 section .text
+                                                       used in Debug\stm8_interrupt_vector.o
+f_alarm_attach_off_func                     000083ba   defined in Debug\alarm.o section .text
+                                                       used in Debug\sm.o
+f_alarm_attach_on_func                      000083ad   defined in Debug\alarm.o section .text
+                                                       used in Debug\sm.o
+f_alarm_check                               000083c7   defined in Debug\alarm.o section .text
+                                                       used in Debug\sm.o
+f_alarm_init                                0000836d   defined in Debug\alarm.o section .text
+                                                       used in Debug\sm.o
+f_alarm_update_alarm_datetime               00008444   defined in Debug\alarm.o section .text
+f_bt_init                                   00008489   defined in Debug\button.o section .text
+                                                       used in Debug\sm.o
+f_bt_update                                 000084a2   defined in Debug\button.o section .text
+                                                       used in Debug\sm.o
+f_cirbuf_get                                00008649   defined in Debug\circular_buf_f.o section .text
+                                                       used in Debug\sm.o
+f_cirbuf_init                               00008572   defined in Debug\circular_buf_f.o section .text
+                                                       used in Debug\sm.o
+f_cirbuf_put                                000085a7   defined in Debug\circular_buf_f.o section .text
+                                                       used in Debug\button.o
+f_exit                                      0000815f   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8 section .text
+f_main                                      00008e5d   defined in Debug\main.o section .text
+                                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi.sm8
+f_main_sm                                   00009b07   defined in Debug\sm.o section .text
+                                                       used in Debug\main.o
+f_memcpy                                    00009b2b   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libisl.sm8)memcpy1.o section .text
+                                                       used in Debug\alarm.o
+                                                               Debug\circular_buf_f.o
+                                                               Debug\menu.o
+f_memset                                    00009b4b   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libisl.sm8)memset1.o section .text
+                                                       used in Debug\countdown.o
+                                                               Debug\tl_pico.o
+f_menu_alarm_next                           00008f86   defined in Debug\menu.o section .text
+f_menu_alarm_next_aux_cfg_date              00009529   defined in Debug\menu.o section .text
+f_menu_alarm_next_aux_cfg_repeate_pattern   000094a9   defined in Debug\menu.o section .text
+f_menu_digital_input_inc                    00009617   defined in Debug\menu.o section .text
+f_menu_digital_input_init                   000095f9   defined in Debug\menu.o section .text
+f_menu_init                                 00008e68   defined in Debug\menu.o section .text
+                                                       used in Debug\sm.o
+f_menu_regressive_next                      00009361   defined in Debug\menu.o section .text
+f_menu_select_sm_next                       00008ee8   defined in Debug\menu.o section .text
+f_menu_show                                 00008e6d   defined in Debug\menu.o section .text
+                                                       used in Debug\sm.o
+f_menu_show_alarm_item                      0000959d   defined in Debug\menu.o section .text
+f_menu_show_digital_input                   00009636   defined in Debug\menu.o section .text
+f_menu_show_repeate_item                    000095bd   defined in Debug\menu.o section .text
+f_rc_attach_off_func                        000086f7   defined in Debug\countdown.o section .text
+                                                       used in Debug\sm.o
+f_rc_attach_on_func                         000086ea   defined in Debug\countdown.o section .text
+                                                       used in Debug\sm.o
+f_rc_check                                  00008704   defined in Debug\countdown.o section .text
+                                                       used in Debug\sm.o
+f_rc_get_left_time                          0000879b   defined in Debug\countdown.o section .text
+                                                       used in Debug\sm.o
+f_rc_init                                   000086a5   defined in Debug\countdown.o section .text
+                                                       used in Debug\sm.o
+f_t_convert_sec_to_time                     00008b63   defined in Debug\time.o section .text
+                                                       used in Debug\countdown.o
+                                                               Debug\menu.o
+f_t_date_add                                0000896a   defined in Debug\time.o section .text
+                                                       used in Debug\alarm.o
+f_t_date_compare                            00008a92   defined in Debug\time.o section .text
+f_t_date_inc                                0000893a   defined in Debug\time.o section .text
+f_t_datetime_compare                        00008ad4   defined in Debug\time.o section .text
+                                                       used in Debug\alarm.o
+f_t_datetime_inc                            000089ba   defined in Debug\time.o section .text
+                                                       used in Debug\sm.o
+f_t_get_day_of_week                         00008af7   defined in Debug\time.o section .text
+                                                       used in Debug\alarm.o
+f_t_last_day_of_month                       000089fa   defined in Debug\time.o section .text
+                                                       used in Debug\menu.o
+f_t_time_compare                            00008a50   defined in Debug\time.o section .text
+f_t_time_dec                                000089cd   defined in Debug\time.o section .text
+                                                       *** not used ***
+f_t_time_inc                                0000899a   defined in Debug\time.o section .text
+f_tl_add                                    00008be4   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o
+f_tl_add_singleton                          00008c4b   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o
+f_tl_get_timestamp                          00008e56   defined in Debug\tl_pico.o section .text
+                                                       *** not used ***
+f_tl_init                                   00008ba8   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o
+f_tl_pause                                  00008d68   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o
+f_tl_pause_all                              00008d83   defined in Debug\tl_pico.o section .text
+                                                       *** not used ***
+f_tl_remove                                 00008d4f   defined in Debug\tl_pico.o section .text
+                                                       *** not used ***
+f_tl_resume                                 00008d91   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o
+f_tl_resume_all                             00008d8b   defined in Debug\tl_pico.o section .text
+                                                       *** not used ***
+f_tl_update                                 00008daa   defined in Debug\tl_pico.o section .text
+                                                       used in Debug\sm.o

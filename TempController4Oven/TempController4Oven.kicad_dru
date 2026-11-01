@@ -11,3 +11,9 @@
 	(constraint silk_clearance (min 0.01mm))
 	(condition "L == 'F.SilkS' || L == 'B.SilkS'")
 )
+(rule "Minimum connection width 1"
+	(constraint connection_width (min 0.1778mm))
+)
+(rule "Routing width 1"
+	(constraint track_width (min 0.1778mm) (opt 1.27mm) (max 2.3622mm))
+)

@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=alarmclock.stp
+Dependencies=
+[Options]
+ActiveProject=alarmclock
+ActiveConfig=Debug
+AddSortedElements=1
