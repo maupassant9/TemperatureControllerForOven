@@ -55,7 +55,6 @@ static enum state_t sm_init( void );
 static enum state_t sm_config( void );
 static enum state_t sm_waiting( void );
 static enum state_t sm_working( void );
-static enum state_t sm_idle( void );
 static void tim4Init( void );
 /* Private functions ---------------------------------------------------------*/
 /** tim1Init 
@@ -95,19 +94,13 @@ static enum state_t sm_init()
     tl_init(&cfg.tl, 10, &cfg.tl_task[0]);
     tl_add(&cfg.tl, sev_seg_update, 1, 1, TL_READY, (void *)0);
     cfg.tltask_7seg_show = tl_add(&cfg.tl, seven_seg_show, 1, 1000, TL_READY, &cfg.dtshow);
-    // Drv7SegSetNum(&cfg.disp, cnt++);
 
-    //pinMode(8, OUTPUT);
-    //pinMode(7, OUTPUT);
     RELAY_PORT->ODR &= ~RELAY_PIN;
     RELAY_PORT->DDR &= ~RELAY_PIN;
     RELAY_PORT->CR1 |= RELAY_PIN;
     RELAY_PORT->CR2 |= RELAY_PIN;
 
     BUTTON_PORT->ODR |= BUTTON_PIN;
-    #if DEBUG > 0
-    Serial.begin(9600);
-    #endif
 
     //init default current time
     //memcpy(&cfg.curr_dt, &current_datetime, sizeof(datetime_t));
@@ -126,8 +119,6 @@ static enum state_t sm_init()
     cirbuf_init(&cfg.cbuf, 2, sizeof(but_msg_t), (cb_ele_t)&cfg.but_msgs[0], false);
     tl_add(&cfg.tl, but_check, 1, 20, TL_READY, (void *)0);
 
-    //ITimer1.init();
-    //ITimer1.attachInterruptInterval(TIMER1_INTERVAL_MS, TimerHandler1);
     menu_init();
     menu_show(msg);
     tim4Init();
@@ -150,9 +141,6 @@ static enum state_t sm_config()
 
     if(finished) {
       finished = false;
-      #if DEBUG > 0
-      Serial.println("From ST_CONFIG enter into ST_WAITING");
-      #endif
       return ST_WAITING;
     } else {
       return ST_CONFIG;
@@ -189,9 +177,6 @@ static enum state_t sm_waiting()
         if(msg.evt == BUTTON_LNG_PRESSED){
           menu_show(msg);
           firsttime = true;
-          #if DEBUG > 0
-          Serial.println("From ST_WAITING enter into ST_CONFIG");
-          #endif
           return ST_CONFIG;
         }
     }
@@ -200,9 +185,6 @@ static enum state_t sm_waiting()
     {
         if(cfg.alarm.mark) {
             firsttime = true; 
-            #if DEBUG > 0
-            Serial.println("From ST_WAITING enter into ST_WORKING");
-            #endif
             return ST_WORKING;
         }
         else return ST_WAITING;
@@ -210,9 +192,6 @@ static enum state_t sm_waiting()
         rc_get_left_time(&cfg.rc, &dt.time);
         if(cfg.rc.mode == ARMED) {
             firsttime = true;
-            #if DEBUG > 0
-            Serial.println("From ST_WAITING enter into ST_WORKING");
-            #endif
             return ST_WORKING;
         }
     }
@@ -226,9 +205,6 @@ static enum state_t sm_working()
     if(cirbuf_get(&cfg.cbuf, (cb_ele_t)&msg) == 0)
     {
         if(msg.evt == BUTTON_LNG_PRESSED){
-            #if DEBUG > 0
-            Serial.println("From ST_WORKING enter into ST_CONFIG");
-            #endif
             return ST_CONFIG;
         }
     }
@@ -247,23 +223,6 @@ static enum state_t sm_working()
         }
     }
     return ST_WORKING;
-}
-
-static enum state_t sm_idle()
-{
-    but_msg_t msg;
-    cfg.dtshow.blink = false;
-    if(cirbuf_get(&cfg.cbuf, (cb_ele_t)&msg) == 0)
-    {
-        if(msg.evt == BUTTON_LNG_PRESSED){
-            while(cirbuf_get(&cfg.cbuf, (cb_ele_t)&msg) == 0);
-            #if DEBUG > 0
-            Serial.println("From ST_IDLE enter into ST_WAITING");
-            #endif
-            return ST_CONFIG;
-        }
-    }
-   return ST_IDLE;
 }
 
 
@@ -446,8 +405,6 @@ enum state_t main_sm(enum state_t s)
             return sm_waiting();
         case ST_WORKING:
             return sm_working();
-        case ST_IDLE:
-            return sm_idle();
     }
 }
 
