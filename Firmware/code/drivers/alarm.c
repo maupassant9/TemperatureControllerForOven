@@ -163,16 +163,3 @@ void alarm_update_alarm_datetime(alarm_t * al, datetime_t * dt)
         
     }
 }
-
-
-#if DEBUG > 0
-void alarm_print(alarm_t * al)
-{
-    Serial.print(" Year:");Serial.print(al->alarm_datetime.date.year+2000);
-    Serial.print(" Month:");Serial.print(al->alarm_datetime.date.month);
-    Serial.print(" Day:");Serial.print(al->alarm_datetime.date.day);
-    Serial.print(" Hour:");Serial.print(al->alarm_datetime.time.hour);
-    Serial.print(" Minute:");Serial.print(al->alarm_datetime.time.minute);
-    Serial.print(" Second:");Serial.println(al->alarm_datetime.time.second);
-}
-#endif

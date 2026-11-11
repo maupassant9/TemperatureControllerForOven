@@ -83,7 +83,7 @@ static enum state_t sm_init()
   #endif
 
   //init default current time
-  //memcpy(&cfg.curr_dt, &current_datetime, sizeof(datetime_t));
+  memcpy(&cfg.curr_dt, &current_datetime, sizeof(datetime_t));
   //initialize the alaram
   alarm_init(&cfg.alarm, &dt, 0, 10*60);
   alarm_attach_on_func(&cfg.alarm, led_on);

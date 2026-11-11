@@ -87,28 +87,7 @@ const uint8_t codes_number[] = {
     0xe3,  // L    26
     0x61,  // E    27
 };
-// const uint8_t codes_number[20] = {
-//     0x00,//0x14, //'0': B,C,D,E,F,G = 0; 10000001b
-//     0xd7, //'1': C,D = 0; 11001111b
-//     0x4c, //'2': B,C,E,F,H = 0; 10010010b
-//     0x45, //'3': B,C,D,E,H = 0; 10000110b
-//     0x87, //'4': C,D,G,H = 0; 11001100b
-//     0x25, //'5': B,D,E,G,H = 0; 10100100b
-//     0x24, //'6': B,D,E,F,G,H = 0; 10100000b
-//     0x57, //'7': B,C,D = 0; 10001111b
-//     0x04, //'8': B,C,D,E,F,G,H = 0; 10000000b
-//     0x05, //'9': B,C,D,E,G,H = 0; 10000100b
-//     0xfb, //'.': 01111111b 10
-// 		0xef,  // -    11
-// 		0xff, // clear 12
-// 		0xec, // 'c'  13
-// 		0xe7,  // 'o'  14
-// 		0xe6, // 'n'   15
-// 		0x2e, // 'F'   16
-// 		0x7f,  //'first temp'    17
-// 		0xef,   //'second temp'   18
-// 		0xfd   //'third temp'   19
-// };
+
 
 int32_t regNum = 0;
 static uint8_t data[DISP_DIGITAL_NO] = {0xff};

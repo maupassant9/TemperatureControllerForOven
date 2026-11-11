@@ -59,13 +59,10 @@ enum menu_st_t {
     REGRESSIVE_MODE_MENU
 };
 
-
 extern config_t cfg;
 
-void menu_init()
-{
-    cfg.mode = 0;
-}
+static void menu_delay(uint32_t msdelay);
+
 
 //true when menu show finished
 //false when menu show still inside
@@ -159,7 +156,7 @@ uint8_t menu_alarm_next(but_msg_t msg)
         Drv7SegSetDigit(&cfg.disp, 24, 2);
         Drv7SegSetDigit(&cfg.disp, 23, 1);
         Drv7SegSetDigit(&cfg.disp, 22, 0);
-        //delay(1000);
+        menu_delay(1000);
         memcpy(&alarm.alarm_datetime, &cfg.curr_dt, sizeof(datetime_t));
         menu_digital_input_init(&editor, d->year, 99, 26);
         menu_show_alarm_item(&editor, 1, datetime_unit_map[st % 6]);
@@ -185,18 +182,16 @@ uint8_t menu_alarm_next(but_msg_t msg)
             menu_show_alarm_item(&editor, 1, datetime_unit_map[(st - 1) % 6]);
         }
         else if (msg.evt == BUTTON_LNG_PRESSED) {
-            t->second = editor.val;
+        //     t->second = editor.val;
+            t->second = 0;
             memcpy(&cfg.curr_dt, &alarm.alarm_datetime, sizeof(datetime_t));
-#if DEBUG > 0
-            alarm_print(&alarm);
-#endif
             memcpy(&alarm, &cfg.alarm, sizeof(alarm_t));
             memcpy(&alarm.alarm_datetime.date, &cfg.curr_dt.date, sizeof(date_t));
             Drv7SegSetDigit(&cfg.disp, 25, 3);
             Drv7SegSetDigit(&cfg.disp, 26, 2);
             Drv7SegSetDigit(&cfg.disp, 25, 1);
             Drv7SegSetDigit(&cfg.disp, 12, 0);
-            //delay(1000);
+            menu_delay(1000);
             menu_digital_input_init(&editor, d->year, 99, 26);
             menu_show_alarm_item(&editor, 1, datetime_unit_map[st % 6]);
             msg.evt = BUTTON_NOT_PRESSED;
@@ -215,20 +210,29 @@ uint8_t menu_alarm_next(but_msg_t msg)
         menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
         break;
     case 11:
-        menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
+            // menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
+            if(msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
+                menu_digital_input_inc(&editor);
+                menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+            } else if(msg.evt == BUTTON_LNG_PRESSED) {
+                st+=2; 
+                t->minute = editor.val;
+                t->second = 0;// t->second = editor.val;
+                mark = ((*p) & 1)?1:0;
+                menu_show_repeate_item(0, mark);
+            }
         break;
     case 12:
-        if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
-            menu_digital_input_inc(&editor);
-            menu_show_alarm_item(&editor, 1, datetime_unit_map[(st - 1) % 6]);
-        }
-        else if (msg.evt == BUTTON_LNG_PRESSED) {
-            st++;
-            t->second = editor.val;
-            mark = ((*p) & 1) ? 1 : 0;
-            menu_show_repeate_item(0, mark);
-        }
-        break;
+        // if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
+        //     menu_digital_input_inc(&editor);
+            //     menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+            // } else if(msg.evt == BUTTON_LNG_PRESSED) {
+            //     st++; 
+            //     t->second = 0;// t->second = editor.val;
+            //     mark = ((*p) & 1)?1:0;
+            //     menu_show_repeate_item(0, mark);
+            // }
+            // break;
     case 13:
     case 14:
     case 15:
@@ -248,9 +252,6 @@ uint8_t menu_alarm_next(but_msg_t msg)
             else *p &= (~(1 << 6));
             mark = false;
             memcpy(&cfg.alarm, &alarm, sizeof(alarm_t));
-#if DEBUG > 0
-            alarm_print(&alarm);
-#endif
             alarm.mark = false;
             return true;
         }
@@ -275,7 +276,7 @@ uint8_t menu_regressive_next(but_msg_t msg)
         Drv7SegSetDigit(&cfg.disp, 12, 2);
         Drv7SegSetDigit(&cfg.disp, 27, 1);
         Drv7SegSetDigit(&cfg.disp, 24, 0);
-        //delay(1000);
+        menu_delay(1000);
         menu_digital_input_init(&editor, t.hour, 23, 0);
         menu_show_alarm_item(&editor, 1, datetime_unit_map[3]);
         st += 4;
@@ -283,20 +284,19 @@ uint8_t menu_regressive_next(but_msg_t msg)
         menu_alarm_next_aux_cfg_date(msg, &st, &t.hour, t.minute, &editor, 59, 0);
         break;
     case 5:
-        menu_alarm_next_aux_cfg_date(msg, &st, &t.minute, t.second, &editor, 59, 0);
-        break;
-    case 6:
-        if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
-            menu_digital_input_inc(&editor);
-            menu_show_alarm_item(&editor, 1, datetime_unit_map[(st - 1) % 6]);
-        }
-        else if (msg.evt == BUTTON_LNG_PRESSED) {
-            t.second = editor.val;
-            cfg.rc.delay_in_sec = t.hour * 3600 + t.minute * 60 + t.second;
-            cfg.rc.mode = INITIAL;
-            st = 0;
-            return true;
-        }
+            //menu_alarm_next_aux_cfg_date(msg, &st, &t.minute, t.second, &editor, 59, 0);
+            if(msg.evt == BUTTON_SHT_PRESSED|| msg.evt == BUTTON_NOT_RELEASED) {
+                menu_digital_input_inc(&editor);
+                menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+            } else if(msg.evt == BUTTON_LNG_PRESSED) { 
+                t.minute = editor.val;
+                t.second = 0;
+                cfg.rc.delay_in_sec = t.hour*3600+t.minute*60;
+                cfg.rc.mode = INITIAL;
+                st = 0;
+                return true;
+            }
+            break;
     default:
         return false;
     }
@@ -378,3 +378,8 @@ void menu_show_digital_input(menu_digital_input_t* t)
     Drv7SegSetNum(&cfg.disp, t->val);
 }
 
+void menu_delay(uint32_t msdelay)
+{
+    uint32_t tstamp = tl_get_timestamp(&cfg.tl);
+    while(tl_get_timestamp(&cfg.tl) - tstamp < msdelay);
+}

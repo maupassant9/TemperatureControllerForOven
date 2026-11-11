@@ -30,7 +30,7 @@ typedef struct {
 /// Descriptions                             ///
 ////////////////////////////////////////////////
 /* Exported functions ------------------------------------------------------- */
-void menu_init( void );
+//void menu_init( void );
 uint8_t menu_show(but_msg_t evt);
 enum mode_t menu_select_sm_next(but_msg_t evt);
 uint8_t menu_alarm_next(but_msg_t msg);

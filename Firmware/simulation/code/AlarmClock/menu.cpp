@@ -184,7 +184,7 @@ bool menu_alarm_next(but_msg_t msg)
                 menu_digital_input_inc(&editor);
                 menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
             } else if(msg.evt == BUTTON_LNG_PRESSED) { 
-                t->second = editor.val;
+                t->second = 0; // t->second = editor.val;
                 memcpy(&cfg.curr_dt, &alarm.alarm_datetime, sizeof(datetime_t));
                 #if DEBUG > 0
                 alarm_print(&alarm);
@@ -214,19 +214,29 @@ bool menu_alarm_next(but_msg_t msg)
             menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
             break;
         case 11:
-            menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
-            break;
-        case 12:
+            // menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
             if(msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
                 menu_digital_input_inc(&editor);
                 menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
             } else if(msg.evt == BUTTON_LNG_PRESSED) {
-                st++; 
-                t->second = editor.val;
+                st+=2; 
+                t->minute = editor.val;
+                t->second = 0;// t->second = editor.val;
                 mark = ((*p) & 1)?1:0;
                 menu_show_repeate_item(0, mark);
             }
             break;
+        case 12:
+            // if(msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
+            //     menu_digital_input_inc(&editor);
+            //     menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+            // } else if(msg.evt == BUTTON_LNG_PRESSED) {
+            //     st++; 
+            //     t->second = 0;// t->second = editor.val;
+            //     mark = ((*p) & 1)?1:0;
+            //     menu_show_repeate_item(0, mark);
+            // }
+            // break;
         case 13:
         case 14:
         case 15:
@@ -280,19 +290,30 @@ bool menu_regressive_next(but_msg_t msg)
             menu_alarm_next_aux_cfg_date(msg, &st, &t.hour, t.minute, &editor, 59, 0);
             break;
         case 5:
-            menu_alarm_next_aux_cfg_date(msg, &st, &t.minute, t.second, &editor, 59, 0);
-            break;
-        case 6: 
+            //menu_alarm_next_aux_cfg_date(msg, &st, &t.minute, t.second, &editor, 59, 0);
             if(msg.evt == BUTTON_SHT_PRESSED|| msg.evt == BUTTON_NOT_RELEASED) {
                 menu_digital_input_inc(&editor);
                 menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
             } else if(msg.evt == BUTTON_LNG_PRESSED) { 
-                t.second = editor.val;
-                cfg.rc.delay_in_sec = t.hour*3600+t.minute*60+t.second;
+                t.minute = editor.val;
+                t.second = 0;
+                cfg.rc.delay_in_sec = t.hour*3600+t.minute*60;
                 cfg.rc.mode = INITIAL;
                 st = 0;
                 return true;
             }
+            break;
+        // case 6: 
+            // if(msg.evt == BUTTON_SHT_PRESSED|| msg.evt == BUTTON_NOT_RELEASED) {
+            //     menu_digital_input_inc(&editor);
+            //     menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+            // } else if(msg.evt == BUTTON_LNG_PRESSED) { 
+                // t.second = 0;// t.second = editor.val;
+                // cfg.rc.delay_in_sec = t.hour*3600+t.minute*60+t.second;
+                // cfg.rc.mode = INITIAL;
+                // st = 0;
+                // return true;
+            // }
         default:
             return false;        
     }

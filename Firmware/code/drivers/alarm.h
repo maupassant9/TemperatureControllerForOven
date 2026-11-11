@@ -45,9 +45,6 @@ void alarm_check(alarm_t *al, datetime_t *dt);
 void alarm_attach_on_func(alarm_t * al, void (*func)(void));
 void alarm_attach_off_func(alarm_t * al, void (*func)(void));
 void alarm_update_alarm_datetime(alarm_t * al, datetime_t * dt);
-#if DEBUG > 0
-void alarm_print(alarm_t * al);
-#endif
 
 
 #endif /*__ALARM_H__*/

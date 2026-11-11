@@ -119,7 +119,7 @@ static enum state_t sm_init()
     cirbuf_init(&cfg.cbuf, 2, sizeof(but_msg_t), (cb_ele_t)&cfg.but_msgs[0], false);
     tl_add(&cfg.tl, but_check, 1, 20, TL_READY, (void *)0);
 
-    menu_init();
+    //menu_init();
     menu_show(msg);
     tim4Init();
     return ST_CONFIG;
@@ -216,9 +216,6 @@ static enum state_t sm_working()
     {
         rc_get_left_time(&cfg.rc, &dt.time);
         if(cfg.rc.mode == STOP) {
-            #if DEBUG > 0
-            Serial.println("From ST_WORKING enter into ST_WAITING");
-            #endif
             return ST_WAITING;
         }
     }
