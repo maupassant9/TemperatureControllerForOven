@@ -20,6 +20,7 @@
 #include "sm.h"
 #include "stm8s_gpio.h"
 #include "stm8s_tim4.h"
+#include "sevenseg.h"
 /* Private define ------------------------------------------------------------*/
 #define TIME_SLICE_NO (8)
 /* Private macro -------------------------------------------------------------*/
@@ -36,7 +37,7 @@ static const uint8_t datetime_unit_map[] = {17,15,19,13,20,21};
 @tiny config_t cfg;
 
 //static const datetime_t current_datetime = {{26, 11, 10}, {0, 0, 0}};
-static const datetime_t dt = {{26, 11, 10}, {7, 30, 0}};
+static datetime_t dt = {{26, 11, 10}, {7, 30, 0}};
 
 /* Global variable -----------------------------------------------------------*/
 /* External variable ---------------------------------------------------------*/
@@ -75,12 +76,15 @@ static void tim4Init( void )
     TIM4->PSCR = TIM4_PRESCALER_128;
     TIM4->ARR = 125;
     TIM4->EGR |= TIM4_EGR_UG;
+    TIM4->IER |= TIM4_IER_UIE;
     TIM4->CR1 |= TIM4_CR1_CEN;
+
 }
 
 @far @svlreg @interrupt void TimerHandler1( void )
 {
-    tl_update(&cfg.tl);
+	TIM4->SR1 &= (uint8_t)(~TIM4_SR1_UIF);	
+	tl_update(&cfg.tl);
 }
 
 static enum state_t sm_init()
@@ -91,16 +95,17 @@ static enum state_t sm_init()
     Drv7SegClear(&cfg.disp, 1);
     Drv7SegClear(&cfg.disp, 2);
     Drv7SegClear(&cfg.disp, 3);
-    tl_init(&cfg.tl, 10, &cfg.tl_task[0]);
+    tl_init(&cfg.tl, 5, &cfg.tl_task[0]);
     tl_add(&cfg.tl, sev_seg_update, 1, 1, TL_READY, (void *)0);
     cfg.tltask_7seg_show = tl_add(&cfg.tl, seven_seg_show, 1, 1000, TL_READY, &cfg.dtshow);
 
     RELAY_PORT->ODR &= ~RELAY_PIN;
-    RELAY_PORT->DDR &= ~RELAY_PIN;
+    RELAY_PORT->DDR |= RELAY_PIN;
     RELAY_PORT->CR1 |= RELAY_PIN;
     RELAY_PORT->CR2 |= RELAY_PIN;
 
-    BUTTON_PORT->ODR |= BUTTON_PIN;
+    BUTTON_PORT->DDR &= ~BUTTON_PIN;
+    //BUTTON_PORT->ODR |= BUTTON_PIN;
 
     //init default current time
     //memcpy(&cfg.curr_dt, &current_datetime, sizeof(datetime_t));
@@ -119,9 +124,9 @@ static enum state_t sm_init()
     cirbuf_init(&cfg.cbuf, 2, sizeof(but_msg_t), (cb_ele_t)&cfg.but_msgs[0], false);
     tl_add(&cfg.tl, but_check, 1, 20, TL_READY, (void *)0);
 
-    //menu_init();
     menu_show(msg);
     tim4Init();
+    enableInterrupts();
     return ST_CONFIG;
 }
 
@@ -225,11 +230,11 @@ static enum state_t sm_working()
 
 static void led_on()
 {
-    RELAY_PORT->DDR |= RELAY_PIN;
+    RELAY_PORT->ODR |= RELAY_PIN;
 }
 static void led_off()
 {
-    RELAY_PORT->DDR &= ~RELAY_PIN;
+    RELAY_PORT->ODR &= ~RELAY_PIN;
 }
 
 /**
@@ -245,7 +250,7 @@ static void led_off()
 static int8_t get_but(uint16_t id)
 {
     int8_t r = (BUTTON_PORT->IDR & BUTTON_PIN);
-    return r?0:1;
+    return r?1:0;
 }
 
 /**

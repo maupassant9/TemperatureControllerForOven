@@ -62,7 +62,7 @@ typedef struct{
     tl_task_t tltask_7seg_show; ///<--- task to show the 7seg led
     tl_task_t tltask_alarm_chk; ///<--- task to check the alarm
 
-    tl_ele_t tl_task[4]; ///<--- memory to save the timeline tasks
+    tl_ele_t tl_task[5]; ///<--- memory to save the timeline tasks
     tl_mem_t tl; ///<--- timeline for system
 
     volatile dtshow_t dtshow; ///<--- dtshow structure used to control tltask_7seg_show

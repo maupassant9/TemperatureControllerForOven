@@ -33,7 +33,7 @@ static void gpioPinsInit( void );
 //   RCLK_PIN:12
 GPIO_TypeDef * gpioPort[5] = {0,GPIOD,GPIOD,GPIOD,GPIOD};
 GPIO_Pin_TypeDef gpioPin[5] = {0, GPIO_PIN_2, GPIO_PIN_4,GPIO_PIN_5,GPIO_PIN_3};
-
+//GPIO_Pin_TypeDef gpioPin[5] = {0, GPIO_PIN_5, GPIO_PIN_4,GPIO_PIN_2,GPIO_PIN_3};
 /********************************************
  * External Variables
  ********************************************/
@@ -143,7 +143,7 @@ void DrvHc595Write(hc595_handle_t * handle,
     unsigned char ser, cnt, devNo, val;
 		for(devNo = 0; devNo < DEV_NO; devNo++)
 		{
-      val = pval[devNo];
+            val = pval[devNo];
 			for(cnt = 0; cnt < 8; cnt++){
 				ser = (uint8_t)(val&0x01);
 				Hc595GpiosWriteAll(handle,(uint8_t)(0x08|ser));
@@ -217,7 +217,7 @@ static void digitalPut(int8_t pinNum, uint8_t value)
         if(value == HIGH_VOLT){
             gpioPort[pinNum]->ODR |= gpioPin[pinNum];
         } else {
-            gpioPort[pinNum]->ODR &= ~gpioPin[pinNum];
+            gpioPort[pinNum]->ODR &= (uint8_t)(~gpioPin[pinNum]);
         }
     }
 }
@@ -240,7 +240,7 @@ static void gpioPinsInit()
 	for(cnt = 0; cnt < 5; cnt++){
         if(gpioPort[cnt] != 0)
         {
-            gpioPort[cnt]->ODR &= ~gpioPin[cnt];
+            gpioPort[cnt]->ODR &= (uint8_t)(~gpioPin[cnt]);
             gpioPort[cnt]->DDR |= gpioPin[cnt];
             //pull-push
             gpioPort[cnt]->CR1 |= gpioPin[cnt];

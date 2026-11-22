@@ -150,113 +150,103 @@ uint8_t menu_alarm_next(but_msg_t msg)
 
     switch (st)
     {
-    case 0:
-        msg.evt = BUTTON_NOT_PRESSED;
-        Drv7SegSetDigit(&cfg.disp, 24, 3);
-        Drv7SegSetDigit(&cfg.disp, 24, 2);
-        Drv7SegSetDigit(&cfg.disp, 23, 1);
-        Drv7SegSetDigit(&cfg.disp, 22, 0);
-        menu_delay(1000);
-        memcpy(&alarm.alarm_datetime, &cfg.curr_dt, sizeof(datetime_t));
-        menu_digital_input_init(&editor, d->year, 99, 26);
-        menu_show_alarm_item(&editor, 1, datetime_unit_map[st % 6]);
-        st++;
-    case 1:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->year, d->month, &editor, 12, 1);
-        break;
-    case 2:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->month, d->day, &editor, t_last_day_of_month(d->month, d->year), 1);
-        break;
-    case 3:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->day, t->hour, &editor, 23, 0);
-        break;
-    case 4:
-        menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
-        break;
-    case 5:
-        menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
-        break;
-    case 6:
-        if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
-            menu_digital_input_inc(&editor);
-            menu_show_alarm_item(&editor, 1, datetime_unit_map[(st - 1) % 6]);
-        }
-        else if (msg.evt == BUTTON_LNG_PRESSED) {
-        //     t->second = editor.val;
-            t->second = 0;
-            memcpy(&cfg.curr_dt, &alarm.alarm_datetime, sizeof(datetime_t));
-            memcpy(&alarm, &cfg.alarm, sizeof(alarm_t));
-            memcpy(&alarm.alarm_datetime.date, &cfg.curr_dt.date, sizeof(date_t));
-            Drv7SegSetDigit(&cfg.disp, 25, 3);
-            Drv7SegSetDigit(&cfg.disp, 26, 2);
-            Drv7SegSetDigit(&cfg.disp, 25, 1);
-            Drv7SegSetDigit(&cfg.disp, 12, 0);
+        case 0:
+            msg.evt = BUTTON_NOT_PRESSED;
+            Drv7SegSetDigit(&cfg.disp, 24, 3);
+            Drv7SegSetDigit(&cfg.disp, 24, 2);
+            Drv7SegSetDigit(&cfg.disp, 23, 1);
+            Drv7SegSetDigit(&cfg.disp, 22, 0);
             menu_delay(1000);
+            memcpy(&alarm.alarm_datetime, &cfg.curr_dt, sizeof(datetime_t));
             menu_digital_input_init(&editor, d->year, 99, 26);
             menu_show_alarm_item(&editor, 1, datetime_unit_map[st % 6]);
-            msg.evt = BUTTON_NOT_PRESSED;
             st++;
-        }
-    case 7:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->year, d->month, &editor, 12, 1);
-        break;
-    case 8:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->month, d->day, &editor, t_last_day_of_month(d->month, d->year), 1);
-        break;
-    case 9:
-        menu_alarm_next_aux_cfg_date(msg, &st, &d->day, t->hour, &editor, 23, 0);
-        break;
-    case 10:
-        menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
-        break;
-    case 11:
-            // menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
-            if(msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
+        case 1:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->year, d->month, &editor, 12, 1);
+            break;
+        case 2:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->month, d->day, &editor, t_last_day_of_month(d->month, d->year), 1);
+            break;
+        case 3:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->day, t->hour, &editor, 23, 0);
+            break;
+        case 4:
+            menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
+            break;
+        case 5:
+            menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
+            break;
+        case 6:
+            if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
                 menu_digital_input_inc(&editor);
-                menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
-            } else if(msg.evt == BUTTON_LNG_PRESSED) {
-                st+=2; 
-                t->minute = editor.val;
-                t->second = 0;// t->second = editor.val;
-                mark = ((*p) & 1)?1:0;
-                menu_show_repeate_item(0, mark);
+                menu_show_alarm_item(&editor, 1, datetime_unit_map[(st - 1) % 6]);
             }
-        break;
-    case 12:
-        // if (msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
-        //     menu_digital_input_inc(&editor);
-            //     menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
-            // } else if(msg.evt == BUTTON_LNG_PRESSED) {
-            //     st++; 
-            //     t->second = 0;// t->second = editor.val;
-            //     mark = ((*p) & 1)?1:0;
-            //     menu_show_repeate_item(0, mark);
-            // }
-            // break;
-    case 13:
-    case 14:
-    case 15:
-    case 16:
-    case 17:
-    case 18:
-        menu_alarm_next_aux_cfg_repeate_pattern(msg, &st, st - 13, &mark, p);
-        break;
-    case 19:
-        if (msg.evt == BUTTON_SHT_PRESSED) {
-            mark = !mark;
-            menu_show_repeate_item(6, mark);
-        }
-        else if (msg.evt == BUTTON_LNG_PRESSED) {
-            st = 0;
-            if (mark) *p |= (1 << 6);
-            else *p &= (~(1 << 6));
-            mark = false;
-            memcpy(&cfg.alarm, &alarm, sizeof(alarm_t));
-            alarm.mark = false;
-            return true;
-        }
-    default:
-        return false;
+            else if (msg.evt == BUTTON_LNG_PRESSED) {
+            //     t->second = editor.val;
+                t->second = 0;
+                memcpy(&cfg.curr_dt, &alarm.alarm_datetime, sizeof(datetime_t));
+                memcpy(&alarm, &cfg.alarm, sizeof(alarm_t));
+                memcpy(&alarm.alarm_datetime.date, &cfg.curr_dt.date, sizeof(date_t));
+                Drv7SegSetDigit(&cfg.disp, 25, 3);
+                Drv7SegSetDigit(&cfg.disp, 26, 2);
+                Drv7SegSetDigit(&cfg.disp, 25, 1);
+                Drv7SegSetDigit(&cfg.disp, 12, 0);
+                menu_delay(1000);
+                menu_digital_input_init(&editor, d->year, 99, 26);
+                menu_show_alarm_item(&editor, 1, datetime_unit_map[st % 6]);
+                msg.evt = BUTTON_NOT_PRESSED;
+                st++;
+            }
+        case 7:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->year, d->month, &editor, 12, 1);
+            break;
+        case 8:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->month, d->day, &editor, t_last_day_of_month(d->month, d->year), 1);
+            break;
+        case 9:
+            menu_alarm_next_aux_cfg_date(msg, &st, &d->day, t->hour, &editor, 23, 0);
+            break;
+        case 10:
+            menu_alarm_next_aux_cfg_date(msg, &st, &t->hour, t->minute, &editor, 59, 0);
+            break;
+        case 11:
+                // menu_alarm_next_aux_cfg_date(msg, &st, &t->minute, t->second, &editor, 59, 0);
+                if(msg.evt == BUTTON_SHT_PRESSED || msg.evt == BUTTON_NOT_RELEASED) {
+                    menu_digital_input_inc(&editor);
+                    menu_show_alarm_item(&editor, 1,  datetime_unit_map[(st-1)%6]);
+                } else if(msg.evt == BUTTON_LNG_PRESSED) {
+                    st+=2; 
+                    t->minute = editor.val;
+                    t->second = 0;// t->second = editor.val;
+                    mark = ((*p) & 1)?1:0;
+                    menu_show_repeate_item(0, mark);
+                }
+            break;
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            menu_alarm_next_aux_cfg_repeate_pattern(msg, &st, st - 13, &mark, p);
+            break;
+        case 19:
+            if (msg.evt == BUTTON_SHT_PRESSED) {
+                mark = !mark;
+                menu_show_repeate_item(6, mark);
+            }
+            else if (msg.evt == BUTTON_LNG_PRESSED) {
+                st = 0;
+                if (mark) *p |= (1 << 6);
+                else *p &= (~(1 << 6));
+                mark = false;
+                memcpy(&cfg.alarm, &alarm, sizeof(alarm_t));
+                alarm.mark = false;
+                return true;
+            }
+        default:
+            return false;
     }
     return false;
 }

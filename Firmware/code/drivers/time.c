@@ -238,8 +238,7 @@ int8_t t_get_day_of_week(int8_t d, int8_t m, int8_t year) {
  */
 void t_convert_sec_to_time(uint32_t sec, time_t * t)
 {
-    int8_t h, m, s;
-    t->second = sec % 60;
-    t->minute = (sec / 60) % 60;
-    t->hour = sec / 3600;
+    t->second = (int8_t)(sec % 60);
+    t->minute = (int8_t)((sec / 60) % 60);
+    t->hour = (int8_t)(sec / 3600);
 }

@@ -204,25 +204,25 @@ void Drv7SegClearAll(hc595_handle_t *handle)
 
 static void Drv7SegCtrInit()
 {
-    DIG1_PORT->ODR &= ~DIG1_PIN;
+    DIG1_PORT->ODR |= DIG1_PIN;
     DIG1_PORT->DDR |= DIG1_PIN;
     DIG1_PORT->CR1 |= DIG1_PIN;
     DIG1_PORT->CR2 |= DIG1_PIN;
     
-    DIG1_PORT->ODR &= ~DIG1_PIN;
-    DIG1_PORT->DDR |= DIG1_PIN;
-    DIG1_PORT->CR1 |= DIG1_PIN;
-    DIG1_PORT->CR2 |= DIG1_PIN;
+    DIG2_PORT->ODR |= DIG2_PIN;
+    DIG2_PORT->DDR |= DIG2_PIN;
+    DIG2_PORT->CR1 |= DIG2_PIN;
+    DIG2_PORT->CR2 |= DIG2_PIN;
     
-    DIG1_PORT->ODR &= ~DIG1_PIN;
-    DIG1_PORT->DDR |= DIG1_PIN;
-    DIG1_PORT->CR1 |= DIG1_PIN;
-    DIG1_PORT->CR2 |= DIG1_PIN;
+    DIG3_PORT->ODR |= DIG3_PIN;
+    DIG3_PORT->DDR |= DIG3_PIN;
+    DIG3_PORT->CR1 |= DIG3_PIN;
+    DIG3_PORT->CR2 |= DIG3_PIN;
 
-    DIG1_PORT->ODR &= ~DIG1_PIN;
-    DIG1_PORT->DDR |= DIG1_PIN;
-    DIG1_PORT->CR1 |= DIG1_PIN;
-    DIG1_PORT->CR2 |= DIG1_PIN;
+    DIG4_PORT->ODR |= DIG4_PIN;
+    DIG4_PORT->DDR |= DIG4_PIN;
+    DIG4_PORT->CR1 |= DIG4_PIN;
+    DIG4_PORT->CR2 |= DIG4_PIN;
 }
 
 void Drv7SegCtrSet(uint8_t pinNum, uint8_t is_on)
@@ -255,16 +255,16 @@ void Drv7SegCtrSet(uint8_t pinNum, uint8_t is_on)
     {
         //Drv7SegCtrClearAll();
         if(!is_on)
-            pinPort->DDR |= pinNo;
+            pinPort->ODR |= pinNo;
         else 
-           pinPort->DDR &= ~pinNo;
+           pinPort->ODR &= ~pinNo;
     }
 }
 
 static void Drv7SegCtrClearAll()
 {
-    DIG1_PORT->DDR |= DIG1_PIN;
-    DIG2_PORT->DDR |= DIG2_PIN;
-    DIG3_PORT->DDR |= DIG3_PIN;
-    DIG4_PORT->DDR |= DIG4_PIN;
+    DIG1_PORT->ODR |= DIG1_PIN;
+    DIG2_PORT->ODR |= DIG2_PIN;
+    DIG3_PORT->ODR |= DIG3_PIN;
+    DIG4_PORT->ODR |= DIG4_PIN;
 }
